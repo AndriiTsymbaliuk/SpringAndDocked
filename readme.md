@@ -3,6 +3,7 @@
 # Spring boot example
 
 ### How to run in Docker container 
-mvn clean package docker:build
+mvn clean package && docker build -f Dockerfile -t docker-spring-boot . && docker run -p 9988:9988 docker-spring-boot
+docker:build
 ### How to run in console without Docker container
-mvn package && java -jar target/springboot-docker-0.0.1-SNAPSHOT.jar
+mvn package && java -jar target/springboot-docker-0.0.1.jar
