@@ -6,4 +6,6 @@
 mvn clean package && docker build -f Dockerfile -t docker-spring-boot . && docker run -p 9988:9988 docker-spring-boot
 docker:build
 ### How to run in console without Docker container
-mvn package && java -jar target/springboot-docker-0.0.1.jar
+mvn clean intsall && java -jar target/springboot-docker-0.0.1.jar
+### How to check maven dependency versions
+mvn versions:display-dependency-updates
