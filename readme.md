@@ -1,4 +1,5 @@
-[![Build Status](https://api.travis-ci.org/dravec/SpringAndDocked.svg?branch=master)](https://api.travis-ci.org/dravec/SpringAndDocked)
+[![Build Status](https://api.travis-ci.org/dravec/SpringAndDocked.svg?branch=master)](https://travis-ci.org/dravec/SpringAndDocked)
+
 # Spring boot example
 
 ### How to run in Docker container 
