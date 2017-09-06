@@ -41,29 +41,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>23.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>1.9</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-client</artifactId>
-			<version>1.9</version>
-		</dependency>
-
-		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-json</artifactId>
 			<version>1.9</version>
@@ -85,13 +62,13 @@
 			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.15.3</version>
+				<version>0.22.1</version>
 				<configuration>
-					<dockerHost>http://localhost:8899</dockerHost>
+					<dockerHost>http://localhost:2375</dockerHost>
 					<verbose>true</verbose>
 					<images>
 						<image>
-							<name>springboot-docker</name>
+							<name>springboot/docker</name>
 							<build>
 								<dockerFile>Dockerfile</dockerFile>
 								<assembly>

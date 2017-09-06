@@ -1,6 +1,5 @@
 package lax.lajolla.SpringBoot.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.core.MediaType;
@@ -18,6 +17,12 @@ public class ItemsContoller {
 	@Autowired
 	private ItemsServices itemsServices;
 
+	@RequestMapping("/")
+	String getWellcomeScreen() {
+		return "<b>Wellcome Screen </b> <br> "
+				+ "<a href=\"/all\">La lista de palabras</a>";
+	}
+	
 	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON, path = "/all")
 	List<Palabra> getAlllItems() {
 
