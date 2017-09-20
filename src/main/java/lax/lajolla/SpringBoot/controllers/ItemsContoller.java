@@ -5,33 +5,33 @@ import java.util.List;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import lax.lajolla.SpringBoot.items.Palabra;
+import lax.lajolla.SpringBoot.items.Palabras;
 import lax.lajolla.SpringBoot.services.ItemsServices;
 
 @RestController
 public class ItemsContoller {
-	@Autowired
-	private ItemsServices itemsServices;
+    @Autowired
+    private ItemsServices itemsServices;
 
-	@RequestMapping("/")
-	String getWellcomeScreen() {
-		return "<b>Wellcome Screen </b> <br> "
-				+ "<a href=\"/all\">La lista de palabras</a>";
-	}
-	
-	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON, path = "/all")
-	List<Palabra> getAlllItems() {
+    @RequestMapping("/")
+    String getWellcomeScreen() {
+        return "<b>Wellcome Screen </b> <br> " + "<a href=\"/all\">La lista de palabras</a>";
+    }
 
-		return itemsServices.getAll();
-	}
+    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON, path = "/all")
+    List<Palabras> getAlllItems() {
 
-	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON, path = "/create")
-	void createNewItem(Palabra palabra) {
-		itemsServices.createNew(palabra);
+        return itemsServices.getAll();
+    }
 
-	}
+    @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON, path = "/create")
+    void createNewItem(@RequestBody Palabras palabra) {
+        itemsServices.createNew(palabra);
+    }
 }
